@@ -59,13 +59,13 @@
 
         <div class="row text-center justify-content-center gap-3">
           <div class="col-12 col-md-8">
-            <button class="btn btn-outline-warning" id="collezioneFizzBuzz">Collezione Fizz Buzz</button>
+            <button class="btn btn-outline-warning" id="bottoneCollezioneFizzBuzz" onclick="collezioneFizzBuzz()">Collezione Fizz Buzz</button>
           </div>
           <div class="col-12 col-md-8">
-            <button class="btn btn-outline-warning" id="inserimentoCasuale">Inserimento Casuale</button>
+            <button class="btn btn-outline-warning" id="bottoneInserimentoCasuale">Inserimento Casuale</button>
           </div>
           <div class="col-12 col-md-8">
-            <button class="btn btn-outline-warning" id="generatoreNumeroCasuale">Generatore Numero Casuale</button>
+            <button class="btn btn-outline-warning" id="bottoneGeneratoreNumeroCasuale">Generatore Numero Casuale</button>
           </div>
           
           <div class="col-12 col-md-8">
@@ -73,8 +73,71 @@
           </div>
           
         </div>
-       
+      </div>
 
+      <!-- Collezione Fizz Buzz -->
+      <div class="container border mt-5 d-none" id="collezioneFizzBuzz">
+        <div class="row text-center p-3">
+          <h3>Collzione Fizz Buzz</h3>
+          <p>SCOPO del gioco : Inserisci il numero di occorrenze(di Fizz Buzz) presenti nel tuo range</p>
+          <p class="text-center ">BUONA FORTUNA!!!</p>
+        </div>
+
+        <div class="row text-center">
+          <div class="col-12 col-md-6">
+            <p>Inserisci il tuo numero di Fizz Buzz :</p>
+            <input type="number" id="numeroOccorrenzeFizzBuzz">
+          </div>
+          <div class="col-12 col-md-3">
+            <p>Inserisci il range minimo :</p>
+            <input type="number" id="numeroOccorrenzeFizzBuzzRangeMin">
+          </div>
+          <div class="col-12 col-md-3">
+            <p>Inserisci il range massimo :</p>
+            <input type="number" id="numeroOccorrenzeFizzBuzzRangeMax">
+          </div>
+          <div class="col-12 col-md-12 mt-3">
+            <button class="btn btn-outline-warning" id="bottoneInzioGiocoCollezioneFizzBuzz" onclick="bottoneInzioGiocoCollezioneFizzBuzz()">Gioca</button>
+          </div>
+          <div class="col-12 col-md-12 mt-3">
+            <button class="btn btn-outline-danger" id="tornaIndietroAlMenu" onclick="tornaAlMenu()">Torna al Menu</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Risultato Collezione Fizz Buzz -->
+      <div class="container border mt-5 d-none" id="risultatoCollezioneFizzBuzz">
+        <div class="row text-center gap-3 p-3">
+          <div class="col-12">
+            <h3>Risultato Gioco</h3>
+          </div>
+
+          <div class="col-12">
+            <p>Il numero di occorrenze da <span id="numeroRangeMinGioco"></span> a <span id="numeroRangeMaxGioco"></span> è :</p>
+            <p id="risultatoOccorrenzeGioco"></p>
+          </div>
+
+          <div class="col-12">
+            <p>Il tuo numero è :</p>
+            <p id="contenitoreNumeroOccorrenzeGiocatore"></p>
+          </div>
+
+          <div class="col-12">
+            <p id="risultatoVittoriaSconfitta"></p>
+          </div>
+
+          <div class="col-12">
+            <button class="btn btn-outline-warning">Rigioca</button>
+          </div>
+          
+          <div class="col-12">
+            <button class="btn btn-outline-danger">Torna al Menu</button>
+          </div>
+
+
+
+        </div>
 
       </div>
 

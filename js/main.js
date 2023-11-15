@@ -25,3 +25,18 @@ function tornaSchermataPrincipale(){
     document.getElementById("paginaMenu").classList.add("d-none");
     document.getElementById("schermataPrincipaleMain").classList.remove("d-none");
 }
+
+function collezioneFizzBuzz(){
+    document.getElementById("paginaMenu").classList.add("d-none");
+    document.getElementById("collezioneFizzBuzz").classList.remove("d-none");
+}
+
+function tornaAlMenu(){
+    document.getElementById("paginaMenu").classList.remove("d-none");
+    document.getElementById("collezioneFizzBuzz").classList.add("d-none");
+}
+
+function bottoneInzioGiocoCollezioneFizzBuzz(){
+    document.getElementById("collezioneFizzBuzz").classList.add("d-none");
+    document.getElementById("risultatoCollezioneFizzBuzz").classList.remove("d-none");
+}
