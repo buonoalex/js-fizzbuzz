@@ -12,3 +12,16 @@ for(let i = 1; i<101; i++){
         console.log(i);
     }
 }
+
+function bottonePrimaPagina(){
+    let nomeGiocatore = document.getElementById("nomeGiocatore").value;
+    document.getElementById("contenitoreNomeGiocatore").innerHTML = nomeGiocatore;
+
+    document.getElementById("paginaMenu").classList.remove("d-none");
+    document.getElementById("schermataPrincipaleMain").classList.add("d-none");
+}
+
+function tornaSchermataPrincipale(){
+    document.getElementById("paginaMenu").classList.add("d-none");
+    document.getElementById("schermataPrincipaleMain").classList.remove("d-none");
+}
