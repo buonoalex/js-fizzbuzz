@@ -101,3 +101,13 @@ function tornaAlMenuDaCollezioneFizzBuzz(){
     document.getElementById("paginaMenu").classList.remove("d-none");
     document.getElementById("MostraArray").classList.add("d-none");
 }
+
+function generatoreNumeroCasuale(){
+    document.getElementById("paginaMenu").classList.add("d-none");
+    document.getElementById("generatoreNumeroCasuale").classList.remove("d-none");
+}
+
+function tornaAlMenu3(){
+    document.getElementById("paginaMenu").classList.remove("d-none");
+    document.getElementById("generatoreNumeroCasuale").classList.add("d-none");
+}
