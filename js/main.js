@@ -111,3 +111,100 @@ function tornaAlMenu3(){
     document.getElementById("paginaMenu").classList.remove("d-none");
     document.getElementById("generatoreNumeroCasuale").classList.add("d-none");
 }
+
+function bottoneInizioGiocoGeneratoreCasuale(){
+    document.getElementById("generatoreNumeroCasuale").classList.add("d-none");
+    document.getElementById("risultatoGeneratoreNumeroCasuale").classList.remove("d-none");
+    let sceltaLivello = document.getElementById("sceltaLivello").value;
+    console.log(sceltaLivello);
+
+    let numeroRandom;
+    
+
+    switch(sceltaLivello){
+
+        case "1":
+            
+            numeroRandom = Math.floor(Math.random()*100)+1;
+            document.getElementById("contenitoreNumeroCasuale").innerHTML = numeroRandom;
+
+            let array1 = creoArrayFizzBuzz(1,100);
+
+            let presente1 = array1.includes(numeroRandom);
+            console.log(presente1);
+
+            if(presente1){
+                document.getElementById("contenitoreRisultatoVincentePerdente").innerHTML = "HAI VINTO!!";
+            }else{
+                document.getElementById("contenitoreRisultatoVincentePerdente").innerHTML = "HAI PERSO!!";
+            }
+            
+            
+        break;
+
+        case "2":
+
+            numeroRandom = Math.floor(Math.random()*200)+1
+            document.getElementById("contenitoreNumeroCasuale").innerHTML = numeroRandom;
+            let array2 = creoArrayFizzBuzz(2,200);
+
+            let presente2 = array2.includes(numeroRandom);
+            console.log(presente2);
+
+            if(presente2){
+                document.getElementById("contenitoreRisultatoVincentePerdente").innerHTML = "HAI VINTO!!";
+            }else{
+                document.getElementById("contenitoreRisultatoVincentePerdente").innerHTML = "HAI PERSO!!";
+            }
+            
+        break;
+
+        case "3":
+            numeroRandom = Math.floor(Math.random()*300)+1
+            document.getElementById("contenitoreNumeroCasuale").innerHTML = numeroRandom;
+            let array3 = creoArrayFizzBuzz(2,200);
+
+            let presente3 = array3.includes(numeroRandom);
+            console.log(presente3);
+
+            if(presente3){
+                document.getElementById("contenitoreRisultatoVincentePerdente").innerHTML = "HAI VINTO!!";
+            }else{
+                document.getElementById("contenitoreRisultatoVincentePerdente").innerHTML = "HAI PERSO!!";
+            }
+
+        break;
+
+    }
+}
+
+function creoArrayFizzBuzz(min,max){
+    const arrayRisultato = [];
+    for(let i=min; i<=max; i++){
+        if(i%3 == 0 && i%5 == 0){
+            arrayRisultato.push(i);
+        }
+    }
+    return arrayRisultato;
+}
+
+function rigiocaGeneratoreNumeroCasuale(){
+    document.getElementById("risultatoGeneratoreNumeroCasuale").classList.add("d-none");
+    document.getElementById("generatoreNumeroCasuale").classList.remove("d-none");
+}
+
+function rigiocaGeneratoreNumeroCasuale(){
+    document.getElementById("risultatoGeneratoreNumeroCasuale").classList.add("d-none");
+    document.getElementById("generatoreNumeroCasuale").classList.remove("d-none");
+}
+
+function tornaAlMenuDaGeneratoreNumeroCasuale(){
+    document.getElementById("risultatoGeneratoreNumeroCasuale").classList.add("d-none");
+    document.getElementById("generatoreNumeroCasuale").classList.add("d-none");
+    document.getElementById("paginaMenu").classList.remove("d-none");
+}
+
+function bottoneFizzOBuzz(){
+    document.getElementById("paginaMenu").classList.add("d-none");
+    document.getElementById("trovaFizzOBuzz").classList.remove("d-none");
+}

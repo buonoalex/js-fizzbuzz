@@ -62,7 +62,7 @@
             <button class="btn btn-outline-warning" id="bottoneCollezioneFizzBuzz" onclick="collezioneFizzBuzz()">Collezione Fizz Buzz</button>
           </div>
           <div class="col-12 col-md-8">
-            <button class="btn btn-outline-warning" id="bottoneInserimentoCasuale">Inserimento Casuale</button>
+            <button class="btn btn-outline-warning" id="bottoneFizzOBuzz" onclick="bottoneFizzOBuzz()">Trova Fizz o Buzz</button>
           </div>
           <div class="col-12 col-md-8">
             <button class="btn btn-outline-warning" id="bottoneGeneratoreNumeroCasuale" onclick="generatoreNumeroCasuale()">Generatore Numero Casuale</button>
@@ -80,7 +80,8 @@
         <div class="row text-center p-3">
           <h3>Collezione Fizz Buzz</h3>
           <p>SCOPO del gioco : Inserisci il numero di occorrenze(di Fizz Buzz) presenti nel tuo range</p>
-          <p class="text-center ">BUONA FORTUNA!!!</p>
+          <p class="text-center">P.S -> fare Fizz Buzz vuol dire avere un numero multiplo di 3 e di 5</p>
+          <p class="text-center">BUONA FORTUNA!!!</p>
         </div>
 
         <div class="row text-center">
@@ -152,29 +153,24 @@
        <!-- Generatore Numero Casuale -->
         <div class="container border mt-5 d-none" id="generatoreNumeroCasuale">
           
-          <div class="row text-center p-3">
-            <h3>Generatore Numero Casuale</h3>
-            <p>SCOPO del gioco : Genera un numero casuale all'interno del range scelto in base alle difficoltà : Base level(1 a 100) , Medium level(2 a 200) , Hard level(3 a 300) , se il numero casuale coincide con uno dei Fizz Buzz(quando un numero è multiplo di 3 e di 5) all'inteno del range scelto,allora sei Master Fizz(HAI VINTO!)</p>
-            <p class="text-center ">BUONA FORTUNA!!!</p>
-          </div>
+          <div class="row text-center justify-content-center p-3">
+              <h3>Generatore Numero Casuale</h3>
+              <p>SCOPO del gioco : Genera un numero casuale all'interno del range scelto in base alle difficoltà : Base level(1 a 100) , Medium level(2 a 200) , Hard level(3 a 300) , se il numero casuale coincide con uno dei Fizz Buzz(quando un numero è multiplo di 3 e di 5) all'inteno del range scelto,allora sei Master Fizz(HAI VINTO!)</p>
+              <p class="text-center ">BUONA FORTUNA!!!</p>
+            
 
-          <div class="text-center">
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
-              <label class="form-check-label" for="inlineRadio1">Base Level</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
-              <label class="form-check-label" for="inlineRadio2">Medium Level</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
-              <label class="form-check-label" for="inlineRadio3">Hard Level</label>
+            <div class="col-12 col-md-6">
+              <select class="form-select" aria-label="Default select example" id="sceltaLivello">
+                <option selected >Scegli il tuo livello</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
             </div>
           </div>
 
           <div class="text-center mt-3">
-            <button class="btn btn-outline-warning" id="bottoneInizioGiocoGeneratoreCasuale">Gioca</button>
+            <button class="btn btn-outline-warning" id="bottoneInizioGiocoGeneratoreCasuale" onclick="bottoneInizioGiocoGeneratoreCasuale()">Gioca</button>
           </div>
 
           
@@ -182,6 +178,35 @@
             <button class="btn btn-outline-danger" id="bottoneTornaAlMenu3" onclick="tornaAlMenu3()">Torna al Menu</button>
           </div>
 
+        </div>
+
+        <!-- Risultato Generatore Numero Casuale -->
+        <div class="conatiner border mt-5 d-none" id="risultatoGeneratoreNumeroCasuale">
+          <div class="row text-center p-3">
+            <h3>Risultato Gioco</h3>
+            <p>Il tuo numero casuale è:</p>
+            <p class="text-center" id="contenitoreNumeroCasuale"></p>
+            <p id="contenitoreRisultatoVincentePerdente"></p>
+          </div>
+
+          <div class="text-center mb-3">
+            <button class="btn btn-outline-warning" id="rigiocaGeneratoreNumeroCasuale" onclick="rigiocaGeneratoreNumeroCasuale()">Rigioca</button>
+          </div>
+
+          <div class="text-center">
+            <button class="btn btn-outline-danger" id="tornaAlMenuDaGeneratoreNumeroCasuale" onclick="tornaAlMenuDaGeneratoreNumeroCasuale()">Torna al Menu</button>
+          </div>
+
+        </div>
+
+        <!-- Trova Fizz o Buzz -->
+        <div class="container border mt-5 d-none" id="trovaFizzOBuzz">
+          <div class="row text-center p-3">
+            <h3>Trova Fizz o Buzz</h3>
+            <p>SCOPO del gioco: Scegli tra Fizz(multiplo di 3) o Buzz(multiplo di 5) e prova ad indovinare quante occorrenze di Fizz o Buzz ci sono, all'interno del range(generato causalmente)</p>
+            <p class="text-center">BUON DIVERTIMENTO!!</p>
+            <p class="text-end">Adesso clicca il tasto (Genera) per generare il range automatico</p>
+          </div>
         </div>
 
     </div>
