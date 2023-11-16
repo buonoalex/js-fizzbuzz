@@ -207,6 +207,58 @@
             <p class="text-center">BUON DIVERTIMENTO!!</p>
             <p class="text-end">Adesso clicca il tasto (Genera) per generare il range automatico</p>
           </div>
+
+          <div class="row justify-content-center text-center mb-3">
+
+            <div class="col-12 col-md-6">
+              <p id="stampaRangeCasuale" class="d-none"></p>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <button class="btn btn-outline-warning" id="generaRangeCasuale" onclick="generaRangeCasuale()">Genera</button>
+            </div>
+
+          </div>
+
+          <div class="row justify-content-center text-center d-none mb-3" id="sceltaFizzBuzz">
+
+            <div class="col-12 col-md-6">
+              <select class="form-select" aria-label="Default select example" id="numeroSceltaFizzBuzz">
+                <option selected>Scegli cosa indovinare?</option>
+                <option value="1">Fizz</option>
+                <option value="2">Buzz</option>
+              </select>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <button class="btn btn-outline-warning" id="confermaSceltaFizzBuzz" onclick="confermaSceltaFizzBuzz()">Conferma scelta</button>
+            </div>
+
+          </div>
+
+          <!-- Trova Fizz o Buzz -->
+          <div class="row justify-content-center text-center align-items-end" id="sceltaFizzBuzz">
+
+            <div class="col-12 col-md-3" id="contenitoreNumeroFizz">
+              <label for="numeroFizz">Numero Fizz:</label>
+              <input id="numeroFizz" type="number">
+            </div>
+
+            <div class="col-12 col-md-3" id="contenitoreNumeroBuzz">
+              <label for="numeroBuzz">Numero Buzz:</label>
+              <input id="numeroBuzz" type="number">
+            </div>
+
+            <div class="col-12 col-md-2">
+              <button class="btn btn-outline-warning" id="inizioGiocoFizzOBuzz">Gioca</button>
+            </div>
+
+            <div class="col-12 col-md-2">
+              <button class="btn btn-outline-danger" id="tornaIndietroDaFizzBuzz">Torna al Menu</button>
+            </div>
+
+          </div>
+
         </div>
 
     </div>

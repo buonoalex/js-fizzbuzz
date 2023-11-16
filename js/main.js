@@ -208,3 +208,38 @@ function bottoneFizzOBuzz(){
     document.getElementById("paginaMenu").classList.add("d-none");
     document.getElementById("trovaFizzOBuzz").classList.remove("d-none");
 }
+
+function generaRangeCasuale(){
+    document.getElementById("stampaRangeCasuale").classList.remove("d-none");
+    document.getElementById("sceltaFizzBuzz").classList.remove("d-none");
+
+    let numberRangeMin = 1;
+    let numberRangeMax = 0;
+
+    while(numberRangeMax<numberRangeMin){
+        numberRangeMin = Math.floor(Math.random()*1000)+1
+        numberRangeMax = Math.floor(Math.random()*1000)+1
+        console.log(numberRangeMin);
+        console.log(numberRangeMax);
+    }
+
+    document.getElementById("stampaRangeCasuale").innerHTML = `
+    Questo è il tuo range ${numberRangeMin} a ${numberRangeMax}`
+    
+}
+
+function confermaSceltaFizzBuzz(){
+    let sceltaFizzBuzz = document.getElementById("numeroSceltaFizzBuzz").value;
+    console.log(sceltaFizzBuzz);
+
+    switch(sceltaFizzBuzz){
+        case "1":
+            console.log("caso 1");
+        break;
+
+        case "2":
+            console.log("caso 2");
+        break;
+    }
+
+}
