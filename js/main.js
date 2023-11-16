@@ -37,6 +37,7 @@ function tornaAlMenu(){
 }
 
 function bottoneInzioGiocoCollezioneFizzBuzz(){
+
     document.getElementById("collezioneFizzBuzz").classList.add("d-none");
     document.getElementById("risultatoCollezioneFizzBuzz").classList.remove("d-none");
 
@@ -48,15 +49,28 @@ function bottoneInzioGiocoCollezioneFizzBuzz(){
     console.log(numeroOccorrenzeGiocatore);
     console.log(numeroOccorrenzeFizzBuzzRangeMin);
     console.log(numeroOccorrenzeFizzBuzzRangeMax);
+
     let conteggioFizzBuzz = 0;
+
+    let arrayNumeriFizzBuzz = [];
     
     for(let i=numeroOccorrenzeFizzBuzzRangeMin; i<numeroOccorrenzeFizzBuzzRangeMax; i++){
         if(i % 3 == 0 && i % 5 == 0){
+            let stringtot = "Fizz Buzz";
             conteggioFizzBuzz = conteggioFizzBuzz + 1;
+            arrayNumeriFizzBuzz.push(stringtot);
+        }else if(i % 3 == 0){
+            let string = "Fizz";
+            arrayNumeriFizzBuzz.push(string);
+        }else if(i % 5 == 0){
+            let string2 = "Buzz";
+            arrayNumeriFizzBuzz.push(string2);
+        }else{
+            arrayNumeriFizzBuzz.push(i);
         }
-        console.log("Completato");
-        console.log(conteggioFizzBuzz);
     }
+
+    let listaNumeri = arrayNumeriFizzBuzz.join(" - ");
 
     document.getElementById("numeroRangeMinGioco").innerHTML = numeroOccorrenzeFizzBuzzRangeMin;
     document.getElementById("numeroRangeMaxGioco").innerHTML = numeroOccorrenzeFizzBuzzRangeMax;
@@ -68,15 +82,22 @@ function bottoneInzioGiocoCollezioneFizzBuzz(){
     }else{
         document.getElementById("risultatoVittoriaSconfitta").innerHTML = "HAI PERSO!";
     }
+
+    document.getElementById("MostraArray").classList.remove("d-none");
+    document.getElementById("outputArray").innerHTML = listaNumeri;
+
+
 }
 
 function rigiocaCollezioneFizzBuzz(){
     document.getElementById("risultatoCollezioneFizzBuzz").classList.add("d-none");
     document.getElementById("collezioneFizzBuzz").classList.remove("d-none");
+    document.getElementById("MostraArray").classList.add("d-none");
 }
 
 function tornaAlMenuDaCollezioneFizzBuzz(){
     document.getElementById("risultatoCollezioneFizzBuzz").classList.add("d-none");
     document.getElementById("collezioneFizzBuzz").classList.add("d-none");
     document.getElementById("paginaMenu").classList.remove("d-none");
+    document.getElementById("MostraArray").classList.add("d-none");
 }
