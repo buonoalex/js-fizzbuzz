@@ -220,6 +220,7 @@
 
           </div>
 
+          <!-- Scelta Fizz o Buzz -->
           <div class="row justify-content-center text-center d-none mb-3" id="sceltaFizzBuzz">
 
             <div class="col-12 col-md-6">
@@ -236,8 +237,9 @@
 
           </div>
 
-          <!-- Trova Fizz o Buzz -->
-          <div class="row justify-content-center text-center align-items-end" id="sceltaFizzBuzz">
+          <!-- Inserisci numero scelta Fizz o Buzz -->
+    
+          <div class="row justify-content-center text-center align-items-end d-none" id="inserisciNumeroSceltaFizzBuzz">
 
             <div class="col-12 col-md-3" id="contenitoreNumeroFizz">
               <label for="numeroFizz">Numero Fizz:</label>
@@ -250,16 +252,49 @@
             </div>
 
             <div class="col-12 col-md-2">
-              <button class="btn btn-outline-warning" id="inizioGiocoFizzOBuzz">Gioca</button>
+              <button class="btn btn-outline-warning" id="inizioGiocoTrovaFizzOBuzz" onclick="inizioGiocoTrovaFizzOBuzz()">Gioca</button>
             </div>
 
             <div class="col-12 col-md-2">
-              <button class="btn btn-outline-danger" id="tornaIndietroDaFizzBuzz">Torna al Menu</button>
+              <button class="btn btn-outline-danger" id="tornaIndietroDaFizzBuzz" onclick="tornaIndietroDaFizzBuzz()">Torna al Menu</button>
             </div>
 
           </div>
 
         </div>
+
+        <!-- Risultati Trova Fizz o Buzz -->
+
+        <div class="container border mt-5 d-none" id="risultatoTrovaFizzOBuzz">
+          <div class="row text-center gap-3 p-3">
+            <div class="col-12">
+              <h3>Risultato Gioco</h3>
+            </div>
+  
+            <div class="col-12">
+              <p>Il numero di occorrenze di <span id="tipoFizzOBuzz"></span> da <span id="numeroRangeMinGiocoFizzOBuzz"></span> a <span id="numeroRangeMaxGiocoFizzOBuzz"></span> è :</p>
+              <p id="risultatoOccorrenzeGioco"></p>
+            </div>
+  
+            <div class="col-12">
+              <p>Il tuo numero è :</p>
+              <p id="contenitoreNumeroOccorrenzeGiocatoreFizzOBuzz"></p>
+            </div>
+  
+            <div class="col-12">
+              <p id="risultatoVittoriaSconfittaFizzOBuzz"></p>
+            </div>
+  
+            <div class="col-12">
+              <button class="btn btn-outline-warning" id="rigiocaTrovaFizzOBuzz" onclick="rigiocaTrovaFizzOBuzz()">Rigioca</button>
+            </div>
+            
+            <div class="col-12">
+              <button class="btn btn-outline-danger" id="tornaAlMenuDaTrovaFizzOBuzz" onclick="tornaAlMenuDaTrovaFizzOBuzz()">Torna al Menu</button>
+            </div>
+  
+          </div>
+  
 
     </div>
 

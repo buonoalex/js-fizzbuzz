@@ -234,12 +234,51 @@ function confermaSceltaFizzBuzz(){
 
     switch(sceltaFizzBuzz){
         case "1":
+            document.getElementById("inserisciNumeroSceltaFizzBuzz").classList.remove("d-none");
+            document.getElementById("contenitoreNumeroBuzz").classList.add("d-none");
+            document.getElementById("contenitoreNumeroFizz").classList.remove("d-none");
+            
             console.log("caso 1");
         break;
 
         case "2":
+            document.getElementById("inserisciNumeroSceltaFizzBuzz").classList.remove("d-none");
+            document.getElementById("contenitoreNumeroFizz").classList.add("d-none");
+            document.getElementById("contenitoreNumeroBuzz").classList.remove("d-none");
             console.log("caso 2");
         break;
     }
+    return sceltaFizzBuzz;
 
 }
+
+function tornaIndietroDaFizzBuzz(){
+    document.getElementById("trovaFizzOBuzz").classList.add("d-none");
+    document.getElementById("stampaRangeCasuale").classList.add("d-none");
+    document.getElementById("sceltaFizzBuzz").classList.add("d-none");
+    document.getElementById("inserisciNumeroSceltaFizzBuzz").classList.add("d-none");
+    document.getElementById("paginaMenu").classList.remove("d-none");
+}
+
+function inizioGiocoTrovaFizzOBuzz(){
+    document.getElementById("trovaFizzOBuzz").classList.add("d-none");
+    document.getElementById("risultatoTrovaFizzOBuzz").classList.remove("d-none");
+}
+
+function rigiocaTrovaFizzOBuzz(){
+    document.getElementById("risultatoTrovaFizzOBuzz").classList.add("d-none");
+    document.getElementById("trovaFizzOBuzz").classList.remove("d-none");
+    document.getElementById("stampaRangeCasuale").classList.add("d-none");
+    document.getElementById("sceltaFizzBuzz").classList.add("d-none");
+    document.getElementById("inserisciNumeroSceltaFizzBuzz").classList.add("d-none");
+}
+
+function tornaAlMenuDaTrovaFizzOBuzz(){
+    document.getElementById("trovaFizzOBuzz").classList.add("d-none");
+    document.getElementById("risultatoTrovaFizzOBuzz").classList.add("d-none");
+    document.getElementById("paginaMenu").classList.remove("d-none");
+    document.getElementById("stampaRangeCasuale").classList.add("d-none");
+    document.getElementById("sceltaFizzBuzz").classList.add("d-none");
+    document.getElementById("inserisciNumeroSceltaFizzBuzz").classList.add("d-none");
+}
+
