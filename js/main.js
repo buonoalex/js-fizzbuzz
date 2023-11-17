@@ -225,6 +225,8 @@ function generaRangeCasuale(){
 
     document.getElementById("stampaRangeCasuale").innerHTML = `
     Questo è il tuo range ${numberRangeMin} a ${numberRangeMax}`
+
+    return {numberRangeMinTrovoFizzOBuzz:numberRangeMin,numberRangeMaxTrovoFizzOBuzz:numberRangeMax};
     
 }
 
@@ -263,6 +265,30 @@ function tornaIndietroDaFizzBuzz(){
 function inizioGiocoTrovaFizzOBuzz(){
     document.getElementById("trovaFizzOBuzz").classList.add("d-none");
     document.getElementById("risultatoTrovaFizzOBuzz").classList.remove("d-none");
+
+    let risultatiRangeFizzOBuzz = generaRangeCasuale();
+    let numeroSceltaFizzOBuzz = confermaSceltaFizzBuzz();
+
+    if(numeroSceltaFizzOBuzz == 1){
+        document.getElementById("tipoFizzOBuzz").innerHTML = "Fizz";
+    }else{
+        document.getElementById("tipoFizzOBuzz").innerHTML = "Buzz";
+    }
+
+    document.getElementById("numeroRangeMinGiocoFizzOBuzz").innerHTML = risultatiRangeFizzOBuzz.numberRangeMinTrovoFizzOBuzz;
+    document.getElementById("numeroRangeMaxGiocoFizzOBuzz").innerHTML = risultatiRangeFizzOBuzz.numberRangeMaxTrovoFizzOBuzz;
+
+    switch(numeroSceltaFizzOBuzz){
+        case "1":
+            let numeroGiocatoreFizz = document.getElementById("numeroFizz").value;
+            document.getElementById("contenitoreNumeroOccorrenzeGiocatoreFizzOBuzz").innerHTML = numeroGiocatoreFizz;
+        break;
+
+        case "2":
+            let numeroGiocatoreBuzz = document.getElementById("numeroBuzz").value;
+            document.getElementById("contenitoreNumeroOccorrenzeGiocatoreFizzOBuzz").innerHTML = numeroGiocatoreBuzz;
+        break;
+    }
 }
 
 function rigiocaTrovaFizzOBuzz(){
