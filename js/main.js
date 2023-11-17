@@ -53,8 +53,9 @@ function bottoneInzioGiocoCollezioneFizzBuzz(){
     let conteggioFizzBuzz = 0;
 
     let arrayNumeriFizzBuzz = [];
+    let i = parseInt(numeroOccorrenzeFizzBuzzRangeMin);
     
-    for(let i=numeroOccorrenzeFizzBuzzRangeMin; i<numeroOccorrenzeFizzBuzzRangeMax; i++){
+    while(i<=parseInt(numeroOccorrenzeFizzBuzzRangeMax)){
         if(i % 3 == 0 && i % 5 == 0){
             let stringtot = "Fizz Buzz";
             conteggioFizzBuzz = conteggioFizzBuzz + 1;
@@ -68,7 +69,9 @@ function bottoneInzioGiocoCollezioneFizzBuzz(){
         }else{
             arrayNumeriFizzBuzz.push(i);
         }
+        i++;
     }
+    console.log("non sono entrato");
 
     let listaNumeri = arrayNumeriFizzBuzz.join(" - ");
 
