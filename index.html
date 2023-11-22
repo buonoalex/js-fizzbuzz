@@ -87,15 +87,15 @@
         <div class="row text-center">
           <div class="col-12 col-md-6">
             <p>Inserisci il tuo numero di Fizz Buzz :</p>
-            <input type="number" id="numeroOccorrenzeFizzBuzz">
+            <input type="number" id="numeroOccorrenzeFizzBuzz" value="">
           </div>
           <div class="col-12 col-md-3">
             <p>Inserisci il range minimo :</p>
-            <input type="number" id="numeroOccorrenzeFizzBuzzRangeMin">
+            <input type="number" id="numeroOccorrenzeFizzBuzzRangeMin" value="">
           </div>
           <div class="col-12 col-md-3">
             <p>Inserisci il range massimo :</p>
-            <input type="number" id="numeroOccorrenzeFizzBuzzRangeMax">
+            <input type="number" id="numeroOccorrenzeFizzBuzzRangeMax" value="">
           </div>
           <div class="col-12 col-md-12 mt-3">
             <button class="btn btn-outline-warning" id="bottoneInzioGiocoCollezioneFizzBuzz" onclick="bottoneInzioGiocoCollezioneFizzBuzz()">Gioca</button>
@@ -145,8 +145,10 @@
         <div class="row text-center p-3">
           <h3>Ecco la sequenza di Fizz Buzz</h3>
         </div>
-        <div class="row">
-          <p id="outputArray"></p>
+        <div id="container_squares" class="w-75 numeri justify-content-center">
+    
+          <!-- CONTENITORE DEI QUADRATI CHE VERRA' POPOLATO DINAMICAMENTE DA JS -->
+      
         </div>
       </div>
 

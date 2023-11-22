@@ -12,6 +12,7 @@
         console.log(i);
     }
 }*/
+//---------------------------INIZIO---------------------------------
 
 function bottonePrimaPagina(){
     let nomeGiocatore = document.getElementById("nomeGiocatore").value;
@@ -26,6 +27,7 @@ function tornaSchermataPrincipale(){
     document.getElementById("schermataPrincipaleMain").classList.remove("d-none");
 }
 
+//--------------------GIOCO COLLEZIONE FIZZ BUZZ----------------
 function collezioneFizzBuzz(){
     document.getElementById("paginaMenu").classList.add("d-none");
     document.getElementById("collezioneFizzBuzz").classList.remove("d-none");
@@ -52,28 +54,49 @@ function bottoneInzioGiocoCollezioneFizzBuzz(){
 
     let conteggioFizzBuzz = 0;
 
-    let arrayNumeriFizzBuzz = [];
-    let i = parseInt(numeroOccorrenzeFizzBuzzRangeMin);
-    
-    while(i<=parseInt(numeroOccorrenzeFizzBuzzRangeMax)){
-        if(i % 3 == 0 && i % 5 == 0){
-            let stringtot = "Fizz Buzz";
-            conteggioFizzBuzz = conteggioFizzBuzz + 1;
-            arrayNumeriFizzBuzz.push(stringtot);
-        }else if(i % 3 == 0){
-            let string = "Fizz";
-            arrayNumeriFizzBuzz.push(string);
-        }else if(i % 5 == 0){
-            let string2 = "Buzz";
-            arrayNumeriFizzBuzz.push(string2);
-        }else{
-            arrayNumeriFizzBuzz.push(i);
-        }
-        i++;
-    }
-    console.log("non sono entrato");
+    //COPIO GRAFICA BOOTSTRAP 
+    for (let i = parseInt(numeroOccorrenzeFizzBuzzRangeMin); i<=parseInt(numeroOccorrenzeFizzBuzzRangeMax); i++){
 
-    let listaNumeri = arrayNumeriFizzBuzz.join(" - ");
+        let squareContent;
+        let bgClass;
+        
+        //individuare numeri multipli sia di 3 che di 5
+        if ((i%3==0) && (i%5==0)){
+            console.log("FizzBuzz");
+            conteggioFizzBuzz = conteggioFizzBuzz + 1;
+            squareContent ="FizzBuzz";
+            bgClass = "bg-danger";
+        }
+    
+        //individure numeri multipli di 5 con il mudulo
+        else if(i%5==0){
+            console.log("Buzz");
+            squareContent ="Buzz";
+            bgClass = "bg-warning";
+        }
+    
+        // individuare numeri multipli di 3
+        else if (i%3==0){
+            console.log("Fizz");
+            squareContent ="Fizz";
+            bgClass = "bg-success";
+        }
+    
+        else{ 
+            console.log(i);
+            squareContent = i;
+            bgClass = "bg-primary";
+        }
+    
+       
+       
+        document.getElementById("container_squares").innerHTML += `
+                <div class="square ${bgClass}" >
+                    <p>${squareContent}</p>
+                </div>
+        `;
+    
+    }
 
     document.getElementById("numeroRangeMinGioco").innerHTML = numeroOccorrenzeFizzBuzzRangeMin;
     document.getElementById("numeroRangeMaxGioco").innerHTML = numeroOccorrenzeFizzBuzzRangeMax;
@@ -87,74 +110,109 @@ function bottoneInzioGiocoCollezioneFizzBuzz(){
     }
 
     document.getElementById("MostraArray").classList.remove("d-none");
-    document.getElementById("outputArray").innerHTML = listaNumeri;
-
 
 }
 
 function rigiocaCollezioneFizzBuzz(){
+
+
+    //RESET PARAMETERS
+    document.getElementById("numeroOccorrenzeFizzBuzz").value = "";
+    document.getElementById("numeroOccorrenzeFizzBuzzRangeMin").value = "";
+    document.getElementById("numeroOccorrenzeFizzBuzzRangeMax").value = "";
+    document.getElementById("container_squares").innerHTML = "";
+
+    //VIEW SCREEN
     document.getElementById("risultatoCollezioneFizzBuzz").classList.add("d-none");
     document.getElementById("collezioneFizzBuzz").classList.remove("d-none");
     document.getElementById("MostraArray").classList.add("d-none");
 }
 
 function tornaAlMenuDaCollezioneFizzBuzz(){
+
+    //RESET PARAMETERS
+    document.getElementById("numeroOccorrenzeFizzBuzz").value = "";
+    document.getElementById("numeroOccorrenzeFizzBuzzRangeMin").value = "";
+    document.getElementById("numeroOccorrenzeFizzBuzzRangeMax").value = "";
+    document.getElementById("container_squares").innerHTML = "";
+
+    //VIEW SCREEN
     document.getElementById("risultatoCollezioneFizzBuzz").classList.add("d-none");
     document.getElementById("collezioneFizzBuzz").classList.add("d-none");
     document.getElementById("paginaMenu").classList.remove("d-none");
     document.getElementById("MostraArray").classList.add("d-none");
 }
+//---------------------------FINE---------------------------------
 
+//---------------GIOCO GENERATORE NUMERO CASUALE------------------
+
+//Funzione accesso alla schermata pre-gioco(Compilazione)
 function generatoreNumeroCasuale(){
     document.getElementById("paginaMenu").classList.add("d-none");
     document.getElementById("generatoreNumeroCasuale").classList.remove("d-none");
 }
 
+//Funzione torna al menu dalla schermata pre-gioco(Compilazione)
 function tornaAlMenu3(){
     document.getElementById("paginaMenu").classList.remove("d-none");
     document.getElementById("generatoreNumeroCasuale").classList.add("d-none");
 }
 
+//Funzione Inizio Gioco
 function bottoneInizioGiocoGeneratoreCasuale(){
+
+    //VIEW SCREEN
     document.getElementById("generatoreNumeroCasuale").classList.add("d-none");
     document.getElementById("risultatoGeneratoreNumeroCasuale").classList.remove("d-none");
+
+    //Presa variabile scelta del livello da eseguire
     let sceltaLivello = document.getElementById("sceltaLivello").value;
     console.log(sceltaLivello);
 
+    //Dichiaro il mio numero random per lo switch
     let numeroRandom;
     
 
+    //Inizio dinamicità in base alla scelta dell'utente del livello 
     switch(sceltaLivello){
 
         case "1":
-            
+
+            //Creo il numero random è lo visualizzo in DOM
             numeroRandom = Math.floor(Math.random()*100)+1;
             document.getElementById("contenitoreNumeroCasuale").innerHTML = numeroRandom;
 
-            let array1 = creoArrayFizzBuzz(1,100);
+            //Creo l'array con la funzione apposita
+            let arrayScelta1 = creoArrayFizzBuzz(1,100);
 
-            let presente1 = array1.includes(numeroRandom);
-            console.log(presente1);
+            //Cerco il mio numero random nell'array
+            let presenteNumeroScelta1 = arrayScelta1.includes(numeroRandom);
+            console.log(presenteNumeroScelta1);
 
-            if(presente1){
+            //Prendo il risultato è lo visulizzo in DOM
+            if(presenteNumeroScelta1){
                 document.getElementById("contenitoreRisultatoVincentePerdente").innerHTML = "HAI VINTO!!";
             }else{
                 document.getElementById("contenitoreRisultatoVincentePerdente").innerHTML = "HAI PERSO!!";
             }
             
-            
         break;
 
         case "2":
-
+            
+            //Creo il numero random è lo visualizzo in DOM
             numeroRandom = Math.floor(Math.random()*200)+1
             document.getElementById("contenitoreNumeroCasuale").innerHTML = numeroRandom;
-            let array2 = creoArrayFizzBuzz(2,200);
 
-            let presente2 = array2.includes(numeroRandom);
-            console.log(presente2);
+            //Creo l'array con la funzione apposita
+            let arrayScelta2 = creoArrayFizzBuzz(2,200);
 
-            if(presente2){
+            //Cerco il mio numero random nell'array
+            let presenteNumeroScelta2 = arrayScelta2.includes(numeroRandom);
+            console.log(presenteNumeroScelta2);
+
+            //Prendo il risultato è lo visulizzo in DOM
+            if(presenteNumeroScelta2){
                 document.getElementById("contenitoreRisultatoVincentePerdente").innerHTML = "HAI VINTO!!";
             }else{
                 document.getElementById("contenitoreRisultatoVincentePerdente").innerHTML = "HAI PERSO!!";
@@ -163,14 +221,20 @@ function bottoneInizioGiocoGeneratoreCasuale(){
         break;
 
         case "3":
+            
+            //Creo il numero random è lo visualizzo in DOM
             numeroRandom = Math.floor(Math.random()*300)+1
             document.getElementById("contenitoreNumeroCasuale").innerHTML = numeroRandom;
-            let array3 = creoArrayFizzBuzz(2,200);
 
-            let presente3 = array3.includes(numeroRandom);
-            console.log(presente3);
+            //Creo l'array con la funzione apposita
+            let arrayScelta3 = creoArrayFizzBuzz(3,300);
 
-            if(presente3){
+            //Cerco il mio numero random nell'array
+            let presenteNumeroScelta3 = arrayScelta3.includes(numeroRandom);
+            console.log(presenteNumeroScelta2);
+
+            //Prendo il risultato è lo visulizzo in DOM
+            if(presenteNumeroScelta2){
                 document.getElementById("contenitoreRisultatoVincentePerdente").innerHTML = "HAI VINTO!!";
             }else{
                 document.getElementById("contenitoreRisultatoVincentePerdente").innerHTML = "HAI PERSO!!";
@@ -181,6 +245,7 @@ function bottoneInizioGiocoGeneratoreCasuale(){
     }
 }
 
+//Funzione Creo array di tutti i Fizz Buzz
 function creoArrayFizzBuzz(min,max){
     const arrayRisultato = [];
     for(let i=min; i<=max; i++){
@@ -191,21 +256,21 @@ function creoArrayFizzBuzz(min,max){
     return arrayRisultato;
 }
 
+//Funzione per rigiocare il gioco 
 function rigiocaGeneratoreNumeroCasuale(){
     document.getElementById("risultatoGeneratoreNumeroCasuale").classList.add("d-none");
     document.getElementById("generatoreNumeroCasuale").classList.remove("d-none");
 }
 
-function rigiocaGeneratoreNumeroCasuale(){
-    document.getElementById("risultatoGeneratoreNumeroCasuale").classList.add("d-none");
-    document.getElementById("generatoreNumeroCasuale").classList.remove("d-none");
-}
-
+//Funzione per tornare al menu dalla schermata Risultato Generatore Numero Casuale
 function tornaAlMenuDaGeneratoreNumeroCasuale(){
     document.getElementById("risultatoGeneratoreNumeroCasuale").classList.add("d-none");
     document.getElementById("generatoreNumeroCasuale").classList.add("d-none");
     document.getElementById("paginaMenu").classList.remove("d-none");
 }
+//---------------------------FINE---------------------------------
+
+//-----------------GIOCO BOTTONE FIZZ O BUZZ----------------------
 
 function bottoneFizzOBuzz(){
     document.getElementById("paginaMenu").classList.add("d-none");
@@ -298,7 +363,7 @@ function inizioGiocoTrovaFizzOBuzz(){
         break;
     }
 
-    //Calcolo Occorrenze Fizz o Buzz(Non funziona)
+    //Calcolo Occorrenze Fizz o Buzz(Funziona)
 
     let numeroOccorrenzeFizz = 0;
     let numeroOccorrenzeBuzz = 0;
@@ -356,3 +421,4 @@ function tornaAlMenuDaTrovaFizzOBuzz(){
     document.getElementById("sceltaFizzBuzz").classList.add("d-none");
     document.getElementById("inserisciNumeroSceltaFizzBuzz").classList.add("d-none");
 }
+//---------------------------FINE---------------------------------
