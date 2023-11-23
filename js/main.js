@@ -272,17 +272,20 @@ function tornaAlMenuDaGeneratoreNumeroCasuale(){
 
 //-----------------GIOCO BOTTONE FIZZ O BUZZ----------------------
 
-function bottoneFizzOBuzz(){
+function bottoneMenuFizzOBuzz(){
+
+    //View Screen
     document.getElementById("paginaMenu").classList.add("d-none");
     document.getElementById("trovaFizzOBuzz").classList.remove("d-none");
 }
 
-let numberRangeMin = 1;
-let numberRangeMax = 0;
+document.getElementById("generaRangeCasuale").addEventListener("click",function(event){
 
-function generaRangeCasuale(){
     document.getElementById("stampaRangeCasuale").classList.remove("d-none");
     document.getElementById("sceltaFizzBuzz").classList.remove("d-none");
+
+    let numberRangeMin = 1;
+    let numberRangeMax = 0;
 
     while(numberRangeMax<numberRangeMin){
         numberRangeMin = Math.floor(Math.random()*1000)+1
@@ -293,10 +296,14 @@ function generaRangeCasuale(){
 
     document.getElementById("contenitoreRangeMinTrovaFizzOBuzz").innerHTML = numberRangeMin;
     document.getElementById("contenitoreRangeMaxTrovaFizzOBuzz").innerHTML = numberRangeMax;
-    
-}
+});
+   
+let numeroMinPerRange = numberRangeMin;
+let numeroMaxPerRange = numberRangeMax;
 
-function confermaSceltaFizzBuzz(){
+document.getElementById("sceltaFizzBuzz").addEventListener("submit",function(event){
+    event.preventDefault();
+
     let sceltaFizzBuzz = document.getElementById("numeroSceltaFizzBuzz").value;
     console.log(sceltaFizzBuzz);
 
@@ -316,9 +323,8 @@ function confermaSceltaFizzBuzz(){
             console.log("caso 2");
         break;
     }
-    return sceltaFizzBuzz;
 
-}
+});
 
 function tornaIndietroDaFizzBuzz(){
     document.getElementById("trovaFizzOBuzz").classList.add("d-none");
@@ -328,14 +334,20 @@ function tornaIndietroDaFizzBuzz(){
     document.getElementById("paginaMenu").classList.remove("d-none");
 }
 
-function inizioGiocoTrovaFizzOBuzz(){
+document.getElementById("inserisciNumeroSceltaFizzBuzz").addEventListener("submit",function(event){
+    event.preventDefault();
+
+    document.getElementById("sceltaFizzBuzz").reset();
+    document.getElementById("inserisciNumeroSceltaFizzBuzz").reset();
+
     document.getElementById("trovaFizzOBuzz").classList.add("d-none");
     document.getElementById("risultatoTrovaFizzOBuzz").classList.remove("d-none");
 
-    let numeroSceltaFizzOBuzz = confermaSceltaFizzBuzz();
+    let numeroSceltaFizzOBuzz = document.getElementById("numeroSceltaFizzBuzz").value;
+    console.log(sceltaFizzBuzz);
    
-    console.log(numberRangeMin);
-    console.log(numberRangeMax);
+    console.log(numeroMinPerRange);
+    console.log(numeroMaxPerRange);
 
 
     if(numeroSceltaFizzOBuzz == 1){
@@ -368,7 +380,7 @@ function inizioGiocoTrovaFizzOBuzz(){
     let numeroOccorrenzeFizz = 0;
     let numeroOccorrenzeBuzz = 0;
 
-    for(let i=numberRangeMin; i<numberRangeMax; i++){
+    for(let i=numeroMinPerRange; i<numeroMaxPerRange; i++){
         if(i%3 == 0){
             numeroOccorrenzeFizz = numeroOccorrenzeFizz + 1;
         }else if(i%5 == 0){
@@ -403,9 +415,12 @@ function inizioGiocoTrovaFizzOBuzz(){
             }
         break;   
     }
-}
+
+});
+
 
 function rigiocaTrovaFizzOBuzz(){
+   
     document.getElementById("risultatoTrovaFizzOBuzz").classList.add("d-none");
     document.getElementById("trovaFizzOBuzz").classList.remove("d-none");
     document.getElementById("stampaRangeCasuale").classList.add("d-none");
@@ -414,6 +429,7 @@ function rigiocaTrovaFizzOBuzz(){
 }
 
 function tornaAlMenuDaTrovaFizzOBuzz(){
+
     document.getElementById("trovaFizzOBuzz").classList.add("d-none");
     document.getElementById("risultatoTrovaFizzOBuzz").classList.add("d-none");
     document.getElementById("paginaMenu").classList.remove("d-none");

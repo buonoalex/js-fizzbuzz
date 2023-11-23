@@ -19,10 +19,10 @@
 
   <!-- QUI POTETE INIZIARE IL VOSTRO ESERCIZIO! -->
   <header>
-    <div class="contanier-fluid bg-warning">
+    <div class="contanier-fluid bg-danger">
       <div class="container">
         <div class="row text-center p-3">
-          <h1>Fizz Buzz</h1>
+          <h1><span class="text-success">Fizz</span>  <span class="text-warning">Buzz</span></h1>
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@
     <div class="container">
 
       <!-- Schermata Principale Main -->
-      <div class="container border mt-5" id="schermataPrincipaleMain">
+      <div class="container border mt-5 mb-5" id="schermataPrincipaleMain">
         <div class="row text-center p-3">
           <h3>Prima Cominciamo</h3>
           <p>Inserisci il tuo nome:</p>
@@ -62,7 +62,7 @@
             <button class="btn btn-outline-warning" id="bottoneCollezioneFizzBuzz" onclick="collezioneFizzBuzz()">Collezione Fizz Buzz</button>
           </div>
           <div class="col-12 col-md-8">
-            <button class="btn btn-outline-warning" id="bottoneFizzOBuzz" onclick="bottoneFizzOBuzz()">Trova Fizz o Buzz</button>
+            <button class="btn btn-outline-warning" id="bottoneMenuFizzOBuzz" onclick="bottoneMenuFizzOBuzz()">Trova Fizz o Buzz</button>
           </div>
           <div class="col-12 col-md-8">
             <button class="btn btn-outline-warning" id="bottoneGeneratoreNumeroCasuale" onclick="generatoreNumeroCasuale()">Generatore Numero Casuale</button>
@@ -217,16 +217,16 @@
             </div>
 
             <div class="col-12 col-md-6">
-              <button class="btn btn-outline-warning" id="generaRangeCasuale" onclick="generaRangeCasuale()">Genera</button>
+              <button class="btn btn-outline-warning" id="generaRangeCasuale">Genera</button>
             </div>
 
           </div>
 
           <!-- Scelta Fizz o Buzz -->
-          <div class="row justify-content-center text-center d-none gap-4 mt-3" id="sceltaFizzBuzz">
+          <form class="row justify-content-center text-center d-none gap-4 mt-3" id="sceltaFizzBuzz">
 
             <div class="col-12 col-md-6">
-              <select class="form-select" aria-label="Default select example" id="numeroSceltaFizzBuzz">
+              <select class="form-select" id="numeroSceltaFizzBuzz">
                 <option selected>Scegli cosa indovinare?</option>
                 <option value="1">Fizz(multiplo di 3)</option>
                 <option value="2">Buzz(multiplo di 5)</option>
@@ -234,14 +234,14 @@
             </div>
 
             <div class="col-12 col-md-6">
-              <button class="btn btn-outline-warning" id="confermaSceltaFizzBuzz" onclick="confermaSceltaFizzBuzz()">Conferma scelta</button>
+              <button type="submit" class="btn btn-outline-warning">Conferma scelta</button>
             </div>
 
-          </div>
+          </form>
 
           <!-- Inserisci numero scelta Fizz o Buzz -->
     
-          <div class="row justify-content-center text-center align-items-end gap-4 mt-3 d-none" id="inserisciNumeroSceltaFizzBuzz">
+          <form class="row justify-content-center text-center align-items-end gap-4 mt-3 d-none" id="inserisciNumeroSceltaFizzBuzz">
 
             <div class="col-8 col-md-2" id="contenitoreNumeroFizz">
               <label for="numeroFizz" class="form-label">Numero Fizz:</label>
@@ -254,14 +254,14 @@
             </div>
 
             <div class="col-12 col-md-2">
-              <button class="btn btn-outline-warning" id="inizioGiocoTrovaFizzOBuzz" onclick="inizioGiocoTrovaFizzOBuzz()">Gioca</button>
+              <button type="submit" class="btn btn-outline-warning" id="inizioGiocoTrovaFizzOBuzz">Gioca</button>
             </div>
 
             <div class="col-12 col-md-2">
               <button class="btn btn-outline-danger" id="tornaIndietroDaFizzBuzz" onclick="tornaIndietroDaFizzBuzz()">Torna al Menu</button>
             </div>
 
-          </div>
+          </form>
 
         </div>
 
@@ -305,6 +305,19 @@
 
   </main>
 
+  <footer>
+    <div class="conatiner-fluid justify-content-center bg-dark">
+      <div class="row text-center p-3">
+        <h5 class="text-danger">
+          <span class="text-danger">Creato</span>
+          <span class="text-success">da</span>
+          <span class="text-warning">Alessandro</span>
+          <span class="text-success">B</span><span class="text-danger">u</span><span class="text-warning">o</span><span class="text-success">n</span><span class="text-warning">o</span>
+        </h5>
+        <p class="text-warning">buonoalex@gmail.com</p>
+      </div>
+    </div>
+  </footer>
 
   <!-- importazione MIO file di script -->
   <script src="./js/main.js"></script>
