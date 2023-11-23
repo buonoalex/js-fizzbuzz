@@ -22,7 +22,7 @@
     <div class="contanier-fluid bg-danger">
       <div class="container">
         <div class="row text-center p-3">
-          <h1><span class="text-success">Fizz</span>  <span class="text-warning">Buzz</span></h1>
+          <h1><span class="text-success border bg-light Regular shadow">Fizz</span>  <span class="text-warning bg-light Regular shadow">Buzz</span></h1>
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@
     <div class="container">
 
       <!-- Schermata Principale Main -->
-      <div class="container border mt-5 mb-5" id="schermataPrincipaleMain">
+      <div class="container border mt-5 mb-5 mx-0 Regular shadow p-3" id="schermataPrincipaleMain">
         <div class="row text-center p-3">
           <h3>Prima Cominciamo</h3>
           <p>Inserisci il tuo nome:</p>
@@ -51,7 +51,7 @@
       </div>
       
       <!-- PaginaMenu -->
-      <div class="container border mt-5 d-none" id="paginaMenu">
+      <div class="container border mt-5 mb-5 mx-0 d-none Regular shadow p-3" id="paginaMenu">
         <div class="row text-center">
           <h3>Ciao <span id="contenitoreNomeGiocatore"></span></h3>
           <p>Seleziona la modalità di gioco :</p>
@@ -59,24 +59,24 @@
 
         <div class="row text-center justify-content-center gap-3">
           <div class="col-12 col-md-8">
-            <button class="btn btn-outline-warning" id="bottoneCollezioneFizzBuzz" onclick="collezioneFizzBuzz()">Collezione Fizz Buzz</button>
+            <button class="btn btn-outline-danger" id="bottoneCollezioneFizzBuzz" onclick="collezioneFizzBuzz()">Collezione Fizz Buzz</button>
           </div>
           <div class="col-12 col-md-8">
             <button class="btn btn-outline-warning" id="bottoneMenuFizzOBuzz" onclick="bottoneMenuFizzOBuzz()">Trova Fizz o Buzz</button>
           </div>
           <div class="col-12 col-md-8">
-            <button class="btn btn-outline-warning" id="bottoneGeneratoreNumeroCasuale" onclick="generatoreNumeroCasuale()">Generatore Numero Casuale</button>
+            <button class="btn btn-outline-success" id="bottoneGeneratoreNumeroCasuale" onclick="generatoreNumeroCasuale()">Generatore Numero Casuale</button>
           </div>
           
           <div class="col-12 col-md-8">
-            <button class="btn btn-outline-danger" id="tornaSchermataPrincipale" onclick="tornaSchermataPrincipale()">Torna Indietro</button>
+            <button class="btn btn-outline-dark" id="tornaSchermataPrincipale" onclick="tornaSchermataPrincipale()">Torna Indietro</button>
           </div>
           
         </div>
       </div>
 
       <!-- Collezione Fizz Buzz -->
-      <div class="container border mt-5 d-none" id="collezioneFizzBuzz">
+      <div class="container border mt-5 mb-5 mx-0 d-none Regular shadow p-3" id="collezioneFizzBuzz">
         <div class="row text-center p-3">
           <h3>Collezione Fizz Buzz</h3>
           <p>SCOPO del gioco : Inserisci il numero di occorrenze(di Fizz Buzz) presenti nel tuo range</p>
@@ -98,17 +98,17 @@
             <input type="number" id="numeroOccorrenzeFizzBuzzRangeMax" value="">
           </div>
           <div class="col-12 col-md-12 mt-3">
-            <button class="btn btn-outline-warning" id="bottoneInzioGiocoCollezioneFizzBuzz" onclick="bottoneInzioGiocoCollezioneFizzBuzz()">Gioca</button>
+            <button class="btn btn-outline-danger" id="bottoneInzioGiocoCollezioneFizzBuzz" onclick="bottoneInzioGiocoCollezioneFizzBuzz()">Gioca</button>
           </div>
           <div class="col-12 col-md-12 mt-3">
-            <button class="btn btn-outline-danger" id="tornaIndietroAlMenu" onclick="tornaAlMenu()">Torna al Menu</button>
+            <button class="btn btn-outline-dark" id="tornaIndietroAlMenu" onclick="tornaAlMenu()">Torna al Menu</button>
           </div>
         </div>
 
       </div>
 
       <!-- Risultato Collezione Fizz Buzz -->
-      <div class="container border mt-5 d-none" id="risultatoCollezioneFizzBuzz">
+      <div class="container border mt-5 mb-5 mx-0 d-none Regular shadow p-3" id="risultatoCollezioneFizzBuzz">
         <div class="row text-center gap-3 p-3">
           <div class="col-12">
             <h3>Risultato Gioco</h3>
@@ -129,11 +129,11 @@
           </div>
 
           <div class="col-12">
-            <button class="btn btn-outline-warning" id="rigiocaCollezioneFizzBuzz" onclick="rigiocaCollezioneFizzBuzz()">Rigioca</button>
+            <button class="btn btn-outline-danger" id="rigiocaCollezioneFizzBuzz" onclick="rigiocaCollezioneFizzBuzz()">Rigioca</button>
           </div>
           
           <div class="col-12">
-            <button class="btn btn-outline-danger" id="tornaAlMenuDaCollezioneFizzBuzz" onclick="tornaAlMenuDaCollezioneFizzBuzz()">Torna al Menu</button>
+            <button class="btn btn-outline-dark" id="tornaAlMenuDaCollezioneFizzBuzz" onclick="tornaAlMenuDaCollezioneFizzBuzz()">Torna al Menu</button>
           </div>
 
         </div>
@@ -141,7 +141,7 @@
       </div>
 
       <!-- Mostra Array -->
-      <div class="container border mt-5 d-none" id="MostraArray">
+      <div class="container border mt-5 mb-5 mx-0 d-none Regular shadow p-3" id="MostraArray">
         <div class="row text-center p-3">
           <h3>Ecco la sequenza di Fizz Buzz</h3>
         </div>
@@ -153,7 +153,7 @@
       </div>
 
        <!-- Generatore Numero Casuale -->
-        <div class="container border mt-5 d-none" id="generatoreNumeroCasuale">
+        <div class="container border mt-5 mb-5 mx-0 d-none Regular shadow p-3" id="generatoreNumeroCasuale">
           
           <div class="row text-center justify-content-center p-3">
               <h3>Generatore Numero Casuale</h3>
@@ -172,18 +172,18 @@
           </div>
 
           <div class="text-center mt-3">
-            <button class="btn btn-outline-warning" id="bottoneInizioGiocoGeneratoreCasuale" onclick="bottoneInizioGiocoGeneratoreCasuale()">Gioca</button>
+            <button class="btn btn-outline-success" id="bottoneInizioGiocoGeneratoreCasuale" onclick="bottoneInizioGiocoGeneratoreCasuale()">Gioca</button>
           </div>
 
           
           <div class="text-center mt-3">
-            <button class="btn btn-outline-danger" id="bottoneTornaAlMenu3" onclick="tornaAlMenu3()">Torna al Menu</button>
+            <button class="btn btn-outline-dark" id="bottoneTornaAlMenu3" onclick="tornaAlMenu3()">Torna al Menu</button>
           </div>
 
         </div>
 
         <!-- Risultato Generatore Numero Casuale -->
-        <div class="conatiner border mt-5 d-none" id="risultatoGeneratoreNumeroCasuale">
+        <div class="conatiner border mt-5 mb-5 mx-0 d-none Regular shadow p-3" id="risultatoGeneratoreNumeroCasuale">
           <div class="row text-center p-3">
             <h3>Risultato Gioco</h3>
             <p>Il tuo numero casuale è:</p>
@@ -192,17 +192,17 @@
           </div>
 
           <div class="text-center mb-3">
-            <button class="btn btn-outline-warning" id="rigiocaGeneratoreNumeroCasuale" onclick="rigiocaGeneratoreNumeroCasuale()">Rigioca</button>
+            <button class="btn btn-outline-success" id="rigiocaGeneratoreNumeroCasuale" onclick="rigiocaGeneratoreNumeroCasuale()">Rigioca</button>
           </div>
 
           <div class="text-center">
-            <button class="btn btn-outline-danger" id="tornaAlMenuDaGeneratoreNumeroCasuale" onclick="tornaAlMenuDaGeneratoreNumeroCasuale()">Torna al Menu</button>
+            <button class="btn btn-outline-dark" id="tornaAlMenuDaGeneratoreNumeroCasuale" onclick="tornaAlMenuDaGeneratoreNumeroCasuale()">Torna al Menu</button>
           </div>
 
         </div>
 
         <!-- Trova Fizz o Buzz -->
-        <div class="container border mt-5 d-none" id="trovaFizzOBuzz">
+        <div class="container border mt-5 mb-5 mx-0 d-none Regular shadow p-3" id="trovaFizzOBuzz">
           <div class="row text-center p-3">
             <h3>Trova Fizz o Buzz</h3>
             <p>SCOPO del gioco: Scegli tra Fizz(multiplo di 3) o Buzz(multiplo di 5) e prova ad indovinare quante occorrenze di Fizz o Buzz ci sono, all'interno del range(generato casualmente)</p>
@@ -223,7 +223,7 @@
           </div>
 
           <!-- Scelta Fizz o Buzz -->
-          <form class="row justify-content-center text-center d-none gap-4 mt-3" id="sceltaFizzBuzz">
+          <form class="row justify-content-center text-center d-none gap-4 mt-3 Regular shadow p-3" id="sceltaFizzBuzz">
 
             <div class="col-12 col-md-6">
               <select class="form-select" id="numeroSceltaFizzBuzz">
@@ -241,7 +241,7 @@
 
           <!-- Inserisci numero scelta Fizz o Buzz -->
     
-          <form class="row justify-content-center text-center align-items-end gap-4 mt-3 d-none" id="inserisciNumeroSceltaFizzBuzz">
+          <form class="row justify-content-center text-center align-items-end gap-4 mt-3 d-none Regular shadow p-3" id="inserisciNumeroSceltaFizzBuzz">
 
             <div class="col-8 col-md-2" id="contenitoreNumeroFizz">
               <label for="numeroFizz" class="form-label">Numero Fizz:</label>
@@ -267,7 +267,7 @@
 
         <!-- Risultati Trova Fizz o Buzz -->
 
-        <div class="container border mt-5 d-none" id="risultatoTrovaFizzOBuzz">
+        <div class="container border mt-5 mb-5 mx-0 d-none Regular shadow" id="risultatoTrovaFizzOBuzz">
           <div class="row text-center gap-3 p-3">
             <div class="col-12">
               <h3>Risultato Gioco</h3>
